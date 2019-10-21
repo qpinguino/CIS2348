@@ -5,27 +5,24 @@ public class Assignment2 {
     public static void main(String[] args){
         Scanner kb = new Scanner(System.in);
 
-
-        do {
-            System.out.println("Please enter the PeopleSoft ID:");
-            String s = kb.nextLine();
-            if(s.matches("^[com|org|edu]")){
-            System.out.println("PeopleSoft ID accepted.");
-            break;
-            }
-            System.out.println("PeopleSoft ID can only contain from 1 to 7 numbers. Please try again");
-        }while(true);
-
-
-        System.out.println("--Assignment 2 Student Profiles--\n");
+        System.out.println("--Student Details, Department of ILT--");
 
         System.out.println("How many students do you have?");
         int N = kb.nextInt();
         ArrayList<Student> students = new ArrayList<Student>();
 
-        Student s1 = new Student();
-        s1.getInfo();
+        for(int i=0; i<N;i++)
+        {
+            System.out.println("\n--Student #"+(i+1)+"--");
+            Student s = new Student();
+            s.getInfo();
+            students.add(s);
+        }
 
-
+        for(int i=0; i<N;i++)
+        {
+            System.out.println("\n--Student #"+(i+1)+"--");
+            students.get(i).displayInfo();
+        }
     }
 }
